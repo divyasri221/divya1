@@ -1,0 +1,52 @@
+#include <stdio.h>
+#define MAX_NODES 50
+int dist[MAX_NODES][MAX_NODES], n;
+void calculate_routes();
+void print_routing_tables();
+int main() {
+    int i, j, new_cost;
+    printf("Enter the number of nodes: ");
+    scanf("%d", &n);
+    printf("Enter the distance matrix:\n");
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < n; j++) {
+            scanf("%d", &dist[i][j]);
+            if (i == j) dist[i][j] = 0; // Distance to itself is zero
+        }
+    }
+    calculate_routes();
+    print_routing_tables();
+
+    printf("\nTo update the cost between two nodes, enter i and j: ");
+    scanf("%d %d", &i, &j);
+    printf("Enter the new cost: ");
+    scanf("%d", &new_cost);
+    dist[i][j] = new_cost;
+    calculate_routes();
+    printf("\nAfter update:\n");
+    print_routing_tables();
+    return 0;
+}
+void calculate_routes() {
+    int i, j, k;
+    for (k = 0; k < n; k++) {
+        for (i = 0; i < n; i++) {
+            for (j = 0; j < n; j++) {
+                if (dist[i][k] + dist[k][j] < dist[i][j]) {
+                    dist[i][j] = dist[i][k] + dist[k][j];
+                }
+            }
+        }
+    }
+}
+void print_routing_tables() {
+    int i, j;
+    for (i = 0; i < n; i++) {
+        printf("\nRouting Table for Router %d:\n", i + 1);
+        printf("To\tCost\n");
+        for (j = 0; j < n; j++) {
+            printf("%d\t%d\n", j + 1, dist[i][j]);
+        }
+    }
+    printf("\n");
+}
