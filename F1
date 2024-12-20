@@ -5,7 +5,6 @@ void main() { } runApp(MyApp());
 class MyApp extends Stateless Widget { @override Widget build(BuildContext context) { return MaterialApp(
 
 title: 'Form Example', theme: ThemeData( primarySwatch: Colors.blue, home: MyForm(), ), );
-
 }
 
 class MyForm extends Stateful Widget { } @override MyFormState createState() => MyFormState();
@@ -46,3 +45,4 @@ SizedBox(height: 16),
 ElevatedButton( onPressed: () { if (formKey.currentState!.validate()) { // Form is valid, process the data print('Name: ${_nameController.text}'); print('Email: ${_emailController.text}'); print('Password: ${_passwordController.text}');
 
 } }, child: Text('Submit'),
+],),),),);}}
