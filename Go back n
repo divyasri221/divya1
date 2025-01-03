@@ -1,1 +1,50 @@
+Aim: Write a program to implement flow control using the sliding window protocol, and loss recovery using the go-back-n mechanism.
+Description: 
+Sliding Window Protocol:
+The sliding window protocol is used in reliable data transmission to manage the flow of frames between sender and receiver. The sender maintains a "window" of frames it can send without needing immediate acknowledgment, allowing multiple frames to be in transit at once. The window slides forward as acknowledgments (ACKs) are received, allowing new frames to be sent. This improves efficiency by maximizing data flow while ensuring reliable delivery.
+Go-Back-N (GBN):
+Go-Back-N is a specific type of sliding window protocol where the sender can send multiple frames before receiving an acknowledgment, but if an error or packet loss occurs, the sender "goes back" and retransmits all frames starting from the lost frame. This method handles packet loss by ensuring that no data is missed, but it can lead to redundant retransmissions when only one frame is lost.
+Source Code:
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<time.h>
 
+void@ int main() {
+    char sender[50], receiver[50]; 
+    int i,winsize, loss_frame;
+    srand(time(0));
+    printf("\nENTER THE WINDOW SIZE: ");
+    scanf("%d", &winsize);
+    getchar();  
+    printf("\nENTER THE DATA TO BE SENT: ");
+    fgets(sender, sizeof(sender), stdin);
+    @sender[strcspn(sender, "\n")] = '\0';
+    loss_frame = rand() % winsize;
+    printf("\nSimulating loss of frame %d\n", loss_frame + 1);
+    for (int@ i = 0; i < winsize && sender[i] != '\0'; i++) {
+        if (i == loss_frame) {
+            printf("Frame %d lost. Retransmitting...\n", i + 1);
+            receiver[i] = sender[i];
+            printf("Frame %d retransmitted successfully.\n", i + 1);
+        } else {
+            receiver[i] = sender[i];
+            printf("Frame %d sent successfully.\n", i + 1);
+        }
+    }
+    receiver[winsize] = '\0'; 
+    printf("\nMESSAGE SENT BY THE SENDER: %s", sender);
+    printf("\nMESSAGE RECEIVED BY THE RECEIVER: %s\n", receiver);
+    getch();
+}
+OUTPUT:
+ENTER THE WINDOW SIZE: 5
+ENTER THE DATA TO BE SENT: HELLO
+Simulating loss of frame 2
+Frame 1 sent successfully.
+Frame 2 lost. Retransmitting...
+Frame 2 retransmitted successfully.
+Frame 3 sent successfully.
+Frame 4 sent successfully.
+MESSAGE SENT BY THE SENDER: HELLO
+MESSAGE RECEIVED BY THE RECEIVER: HELL
