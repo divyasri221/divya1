@@ -1,1 +1,36 @@
+5 b) Implement state management using set State and Provider.
 
+import package:flutter material dart';
+import package.provider provider.dart';
+void main() {run App{Change Notifier Provider(
+App create: (context) => CounterModel(),
+Change Notifier Provider(
+child: MyApp(),
+),);}
+class MyApp extends Stateless Widget {
+@override
+Widget build(BuildContext context) {
+return MaterialApp(
+title: State Management Example', theme: ThemeData( primarySwatch: Colors blue,),home: CounterPage(),);}}
+class Counter Model extends ChangeNotifier {
+int_counter = 0,
+int get counter =>_counter,
+void incrementCounter() {
+_counter++;
+notifyListeners();
+}}
+class Counter Page extends Stateless Widget {
+@override
+Widget build BuildContext context) {
+final counter Model Provider.of CounterModel>(context);
+return Scaffold(
+appBan AppBar( title: Text('State Management Example'),)
+body: Center
+child: Column(
+main Axis Alignment: Main AxisAlignment.center,
+children: <Widget>[
+Text(
+Counter Value: $(counterModel.counter)', style: TextStyle(fontSize: 20), ).
+SizedBox (height: 20),
+ElevatedButton( onPressed: counterModel.incrementCounter, child: Text('Inerement Counter'),
+),],),),);}}
