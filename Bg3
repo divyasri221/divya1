@@ -1,0 +1,76 @@
+3.Here is a comprehensive guide for performing file management tasks using basic HDFS and Linux commands:
+(i) Creating a directory in HDFS
+To create a directory in HDFS, use the hadoop fs -mkdir command:
+hadoop fs -mkdir /user/hdfs/new_directory
+This command creates a directory named new_directory under /user/hdfs/.
+(ii) Moving forth and back to directories
+To navigate between directories in the terminal, use the following commands:
+To move to a directory: 
+cd /path/to/directory
+To go back to the previous directory: 
+cd ..
+(iii) Listing directory contents
+To list the contents of a directory, use:
+hadoop fs -ls /user/hdfs/
+This command lists the files and directories in the specified path of HDFS.
+For local directories:
+ls /path/to/local/directory
+(iv) Uploading and downloading a file in HDFS
+To upload a file from the local filesystem to HDFS: 
+hadoop fs -put /local/path/to/file /hdfs/destination/path
+To download a file from HDFS to the local filesystem: 
+hadoop fs -get /hdfs/path/to/file /local/destination/path
+(v) Checking the contents of the file
+To check the contents of a file in HDFS, use:
+hadoop fs -cat /path/to/hdfs/file
+For local files, you can use:
+cat /local/path/to/file
+(vi) Copying and moving files
+To copy files within HDFS: 
+hadoop fs -cp /path/to/source /path/to/destination
+To move files within HDFS: 
+hadoop fs -mv /path/to/source /path/to/destination
+(vii) Copying and moving files between local to HDFS environment
+To copy a file from the local system to HDFS: 
+hadoop fs -copyFromLocal /local/path/to/file /hdfs/path/to/destination
+To copy a file from HDFS to the local system: 
+hadoop fs -copyToLocal /hdfs/path/to/file /local/path/to/destination
+To move files from local to HDFS: 
+hadoop fs -moveFromLocal /local/path/to/file /hdfs/destination/path
+(viii) Removing files and paths
+To remove a file in HDFS: 
+hadoop fs -rm /path/to/hdfs/file
+To remove a directory in HDFS (and its contents): 
+hadoop fs -rm -r /path/to/hdfs/directory
+For local files:
+rm /local/path/to/file
+(ix) Displaying few lines of a file
+To display the first few lines of a file in HDFS, use:
+hadoop fs -head /path/to/hdfs/file
+For local files:
+head /local/path/to/file
+(x) Display the aggregate length of a file
+To get the length of a file in HDFS, use:
+hadoop fs -du -s /path/to/hdfs/file
+For local files, you can use:
+du -sh /local/path/to/file
+(xi) Checking the permissions of a file
+To check the permissions of a file or directory in HDFS:
+hadoop fs -ls /path/to/hdfs/file
+For local files:
+ls -l /local/path/to/file
+(xii) Zipping and unzipping the files with & without permission pasting it to a location
+To zip a file: 
+zip filename.zip /path/to/file
+To unzip a file: 
+unzip filename.zip
+To preserve permissions when copying or zipping/unzipping:
+When copying in Linux:
+cp -p /path/to/file /destination/path
+For HDFS operations, use hadoop fs -copyFromLocal or hadoop fs -put which preserve file attributes during the transfer.
+(xiii) Copy, Paste commands
+Copy (for local files): 
+cp /path/to/source /path/to/destination
+Paste (just move the file or copy to a new location): 
+mv /path/to/source /path/to/destination
+These are the basic commands and their usage to manage files and directories in both HDFS and the local environment.
