@@ -1,0 +1,119 @@
+Program:
+
+import numpy as np
+
+from scipy import stats
+
+# Sample data
+
+data = [12, 15, 18, 20, 22, 25, 30, 32, 35, 40]
+
+# Central tendency measures
+
+mean = np.mean(data)
+
+median = np.median(data)
+
+mode = stats.mode(data)[0][0]# Measures of dispersion
+
+variance = np.var(data)
+
+std_deviation = np.std(data)
+
+# Output
+
+print("Central Tendency Measures:")
+
+print("Mean:", mean)
+
+print("Median:", median)
+
+print("Mode:", mode)
+
+print("\nMeasures of Dispersion:")
+
+print("Variance:", variance)
+
+print("Standard Deviation:", std_deviation)
+
+Program Without using Modules:
+
+def mean(data):
+
+ return sum(data) / len(data)
+
+def median(data):
+
+ sorted_data = sorted(data)
+
+ n = len(sorted_data)
+
+ mid = n // 2
+
+ if n % 2 == 0:
+
+ return (sorted_data[mid - 1] + sorted_data[mid]) / 2
+
+ else:
+
+ return sorted_data[mid]
+
+def mode(data):
+
+ frequency = {}
+
+ for value in data:
+
+ frequency[value] = frequency.get(value, 0) + 1
+
+ max_frequency = max(frequency.values())
+
+ mode = [key for key, val in frequency.items() if val == max_frequency]
+
+ return mode[0] if len(mode) == 1 else mode
+
+def variance(data):
+
+ n = len(data)
+
+ data_mean = mean(data)
+
+ return sum((x - data_mean) ** 2 for x in data) / n
+
+def standard_deviation(data):return variance(data) ** 0.5
+
+def main():
+
+ # Example data
+
+ data = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+
+ # Compute central tendency measures
+
+ mean_value = mean(data)
+
+ median_value = median(data)
+
+ mode_value = mode(data)
+
+ print("Mean:", mean_value)
+
+ print("Median:", median_value)
+
+ print("Mode:", mode_value)
+
+ # Compute measures of dispersion
+
+ variance_value = variance(data)
+
+ std_deviation_value = standard_deviation(data)
+
+ print("Variance:", variance_value)
+
+ print("Standard Deviation:", std_deviation_value)
+
+if __name__ == "__main__":
+
+ main()
+
+Output:
