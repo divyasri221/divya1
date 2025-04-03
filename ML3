@@ -1,0 +1,171 @@
+# Creating Empty Series
+import pandas as pd
+import numpy as np
+s1 = pd.Series(dtype=np.int8)
+print(s1)
+
+# Creating Series using List object
+s2 = pd.Series([10, 20, 30, 40, 50])
+print(s2)
+
+s3 = pd.Series([10, 20, 30, 40, 50], index=['a', 'b', 'c', 'd', 'e'])
+print(s3)
+# Creating Series using ndarray pandas as pd
+import numpy as np
+
+a = np.ndarray(shape=(5,1))
+for i in range(5):
+  a[i]=i*10
+print(a)
+s = pd.Series(a)
+print(s)
+
+# Creating Series Using Dictionary
+sales_dict = {'2018':10000, '2019':15000, '2020':17000}
+sales_series = pd.Series(sales_dict)
+print(sales_series)
+
+emp_dict = {'nani': 10000, 'suresh': 15000, 'kishore': 17000}
+emp_series = pd.Series(emp_dict)
+print(emp_series)
+# Creating Series using Scalar pandas as pd
+import numpy as np
+
+ values
+s = pd.Series(15, index=[0, 1, 2, 3, 4])
+print(s)
+
+# Accessing Data from Series
+s1 = pd.Series([100, 200, 300, 400, 500])
+print(s1[0], s1[1], s1[2], s1[3], s1[4])
+s2 = pd.Series([100, 200, 300, 400, 500], index=['a', 'b', 'c', 'd', 'e'])
+print(s2['a'], s2['b'], s2['c'], s2['d'], s2['e'])
+print(s2[0], s2[1], s2[2], s2[3], s2[4])
+
+# Reading multiple elements/values from series
+
+3 = pd.Series(range(100, 1000, 100))
+print(s3)
+print(s3[[1, 3, 5]])
+print(s3[2:7:2])
+import pandas as pd
+
+# Reading multiple elements/values from series
+s1 = pd.Series(range(100, 1000, 100))
+print(s1)
+print(s1[[1, 3]])
+print(s1[3:6])
+print(s1[:: -1])import pandas as pd
+import numpy as np
+
+# Creating empty dataframe
+df = pd.DataFrame()
+print(df)
+
+# Creating DataFrame using dictionary
+data = {'name': ['kishore', 'suresh', 'rajesh'], 'age': [25, 30, 28], 'city': ['hyd', 'pune', 'del']}
+df = pd.DataFrame(data)
+print(df)
+
+# Create DataFrame using List
+person_list = [['kishore', 25], ['suresh', 30], ['rajesh', 28]]
+df = pd.DataFrame(person_list, columns=['name', 'age'], dtype=float)
+print(df)
+
+# DataFrame created with missing data
+data = {'name': ['kishore', 'suresh', 'rajesh'], 'age': [25, np.NaN, 28]}
+df = pd.DataFrame(data, columns=['name', 'age'])
+print(df)
+
+data = {'name': ['kishore', 'suresh', 'rajesh'], 'age': [25, 30, 28]}
+df = pd.DataFrame(data, index=['p1', 'p2', 'p3'])
+print(df)import pandas as pd
+import numpy as np
+
+# DataFrame created with missing data
+data = {'name': ['naresh', 'suresh', 'kishore', 'rajesh'], 'age': [45, np.NaN, 65, None]}
+df = pd.DataFrame(data, columns=['name', 'age'])
+print(df)
+
+data = {'name': ['naresh', 'suresh', 'kishore', 'rajesh'], 'age': [45, 50, 65, 25]}
+df = pd.DataFrame(data, index=['p1', 'p2', 'p3', 'p4'])
+print(df)
+
+# Reading/loading data from ms-excel
+# df = pd.read_excel("Book1.xlsx")
+# print(df)
+# df = pd.read_excel("Book1.xlsx", sheet_name='Sheet2')
+# print(df)
+
+# Selecting Data
+# 1. Row Selection
+# 2. Column Selection
+# Column Selection
+data = {'name': ['naresh', 'suresh', 'kishore', 'rajesh'], 'age': [45, 50, 65, 25]}
+df = pd.DataFrame(data)
+print(df['name'])
+print(df[['name', 'age']].dtypes)# Reading multiple columns from DataFrame
+# In order to read multiple columns, the column names must be defined as a list. It returns multiple columns as a dataframe.
+# single column it read as a series.
+df = pd.DataFrame({'a': [100, 200, 300, 400, 500], 'b': [1000, 2000, 3000, 4000, 5000], 'c': ['x', 'y', 'z', 'w', 'v']})
+print(df[['a', 'c']])
+print(df[['a']])
+print(df['a'])import matplotlib.pyplot as plt
+import numpy as np
+
+# Line Plot
+xpoints = np.array([0, 1])
+ypoints = np.array([0, 250])
+
+plt.plot(xpoints, ypoints)
+plt.show()
+
+# Scatter Plot
+x = np.random.normal(100, 10, 200)
+y = np.random.normal(100, 10, 200)
+
+plt.scatter(x, y)
+plt.show()import matplotlib.pyplot as plt
+import numpy as np
+
+# Boxplot
+
+# Creating dataset
+np.random.seed(10)
+data = np.random.normal(100, 20, 200)
+
+# Creating plot
+plt.boxplot(data)
+
+# Show plot
+plt.show()
+
+# ---
+
+# Boxplot with multiple datasets
+
+# Import libraries
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Creating dataset
+np.random.seed(10)
+data = np.random.normal(100, 20, 200)
+data_1 = np.random.normal(90, 20, 200)
+data_2 = np.random.normal(80, 20, 200)
+data_3 = np.random.normal(70, 20, 200)
+data_4 = np.random.normal(60, 20, 200)
+
+fig = plt.figure(figsize =(10, 7))
+
+# Creating axes instance
+ax = fig.add_axes([0, 0, 1, 1])
+
+# Creating plot
+bp = ax.boxplot([data, data_1, data_2, data_3, data_4])
+
+# Show plot
+plt.show()
+
+# Output:
+# (The output will be a boxplot with 5 boxes representing the 5 datasets)
