@@ -1,0 +1,273 @@
+Week2:
+
+Study of Python Basic Libraries such as Statistics, Math, Numpy and Scipy 
+
+1. Statistics: 
+
+- The `statistics` module is part of the Python Standard Library and provides 
+
+functions for calculating mathematical statistics of numeric data.
+
+ - It includes functions for computing measures like mean, median, mode, 
+
+variance, standard deviation, and more.
+
+ - This module is useful for basic statistical analysis tasks and is easy to use for 
+
+simple data sets.
+
+-
+
+Example:
+
+import statistics
+
+ data = [1, 2, 3, 4, 5]
+
+ mean_value = statistics.mean(data)
+
+ median_value = statistics.median(data)
+
+ mode_value = statistics.mode(data)
+
+ print(mean_value)
+
+ print(median_value)
+
+ print(mode_value)
+
+Output:
+
+2. Math: 
+
+- The `math` module is also part of the Python Standard Library and provides 
+
+mathematical functions for operations beyond basic arithmetic.
+
+ - It includes functions for mathematical constants (e.g., pi, e), trigonometric 
+
+functions, logarithmic functions, exponentiation, and more.
+
+ - This module is useful for more complex mathematical calculations.
+
+ - Example:
+
+ import math
+x = math.sin(math.pi / 2)
+
+ y = math.log(10)
+
+ z = math.sqrt(25)
+
+ print(x)
+
+ print(y)
+
+ print(z)
+
+Output:
+
+3. NumPy:
+
+ - NumPy (Numerical Python) is a popular library for numerical computing in 
+
+Python.
+
+ - It provides support for large, multi-dimensional arrays and matrices, along with 
+
+a collection of mathematical functions to operate on these arrays.
+
+ - NumPy is widely used in scientific computing, data analysis, and machine 
+
+learning tasks due to its efficient array operations and mathematical functions.
+
+ - Example:
+
+ import numpy as np
+
+ data = np.array([1, 2, 3, 4, 5])
+
+ mean_value = np.mean(data)
+
+ print(mean_value)
+
+ median_value = np.median(data)
+
+ print(median_value)
+
+ variance_value = np.var(data)
+
+ print(variance_value)
+4. SciPy:
+
+ - SciPy (Scientific Python) builds on top of NumPy and provides additional 
+
+functionality for scientific computing tasks.
+
+ - It includes modules for optimization, interpolation, integration, linear algebra, 
+
+signal processing, and more.
+
+ - SciPy is extensively used in various scientific fields and engineering disciplines 
+
+for solving complex mathematical problems.
+
+- Example:
+
+from scipy import optimize
+
+# Example optimization problem
+
+def objective_function(x):
+
+ return x**2 + 5*x + 6
+
+result = optimize.minimize(objective_function, x0=0)
+
+print(result)
+
+Output:
+
+These libraries play crucial roles in various domains of Python programming, from 
+
+simple statistical analysis to advanced scientific computations. Understanding how 
+
+to utilize them effectively can greatly enhance your ability to work with numerical 
+
+data and solve complex mathematical problemsWeek2:
+
+Study of Python Basic Libraries such as Statistics, Math, Numpy and Scipy 
+
+1. Statistics: 
+
+- The `statistics` module is part of the Python Standard Library and provides 
+
+functions for calculating mathematical statistics of numeric data.
+
+ - It includes functions for computing measures like mean, median, mode, 
+
+variance, standard deviation, and more.
+
+ - This module is useful for basic statistical analysis tasks and is easy to use for 
+
+simple data sets.
+
+-
+
+Example:
+
+import statistics
+
+ data = [1, 2, 3, 4, 5]
+
+ mean_value = statistics.mean(data)
+
+ median_value = statistics.median(data)
+
+ mode_value = statistics.mode(data)
+
+ print(mean_value)
+
+ print(median_value)
+
+ print(mode_value)
+
+Output:
+
+2. Math: 
+
+- The `math` module is also part of the Python Standard Library and provides 
+
+mathematical functions for operations beyond basic arithmetic.
+
+ - It includes functions for mathematical constants (e.g., pi, e), trigonometric 
+
+functions, logarithmic functions, exponentiation, and more.
+
+ - This module is useful for more complex mathematical calculations.
+
+ - Example:
+
+ import math
+x = math.sin(math.pi / 2)
+
+ y = math.log(10)
+
+ z = math.sqrt(25)
+
+ print(x)
+
+ print(y)
+
+ print(z)
+
+Output:
+
+3. NumPy:
+
+ - NumPy (Numerical Python) is a popular library for numerical computing in 
+
+Python.
+
+ - It provides support for large, multi-dimensional arrays and matrices, along with 
+
+a collection of mathematical functions to operate on these arrays.
+
+ - NumPy is widely used in scientific computing, data analysis, and machine 
+
+learning tasks due to its efficient array operations and mathematical functions.
+
+ - Example:
+
+ import numpy as np
+
+ data = np.array([1, 2, 3, 4, 5])
+
+ mean_value = np.mean(data)
+
+ print(mean_value)
+
+ median_value = np.median(data)
+
+ print(median_value)
+
+ variance_value = np.var(data)
+
+ print(variance_value)
+4. SciPy:
+
+ - SciPy (Scientific Python) builds on top of NumPy and provides additional 
+
+functionality for scientific computing tasks.
+
+ - It includes modules for optimization, interpolation, integration, linear algebra, 
+
+signal processing, and more.
+
+ - SciPy is extensively used in various scientific fields and engineering disciplines 
+
+for solving complex mathematical problems.
+
+- Example:
+
+from scipy import optimize
+
+# Example optimization problem
+
+def objective_function(x):
+
+ return x**2 + 5*x + 6
+
+result = optimize.minimize(objective_function, x0=0)
+
+print(result)
+
+Output:
+
+These libraries play crucial roles in various domains of Python programming, from 
+
+simple statistical analysis to advanced scientific computations. Understanding how 
+
+to utilize them effectively can greatly enhance your ability to work with numerical 
+
+data and solve complex mathematical problems
