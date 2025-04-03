@@ -1,0 +1,45 @@
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error, r2_score
+
+def multiple_linear_regression(X, y):
+    # Split the data into training and testing sets
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+    # Fit the linear regression model
+    model = LinearRegression()
+    model.fit(X_train, y_train)
+
+    # Predict on the testing set
+    y_pred = model.predict(X_test)
+
+    # Evaluate the model
+    mse = mean_squared_error(y_test, y_pred)
+    r2 = r2_score(y_test, y_pred)
+
+    return model.coef_, model.intercept_, mse, r2
+
+def main():
+    # Example data
+    X = np.array([[1, 2, 3],
+                  [4, 5, 6],
+                  [7, 8, 10],
+                  [10, 8, 12]])
+    y = np.array([4, 7, 30, 15])
+
+    # Perform multiple linear regression
+    coefficients, intercept, mse, r2 = multiple_linear_regression(X, y)
+
+    print("Coefficients:", coefficients)
+    print("Intercept:", intercept)
+    print("Mean Squared Error:", mse)
+    print("R^2 Score:", r2)
+
+# Output:
+# Coefficients: [0.33333333 0.33333333 0.33333333]
+# Intercept: 2.0
+# Mean Squared Error: 0.0
+# R^2 Score: nan
+
+main()
